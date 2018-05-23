@@ -13,5 +13,9 @@ module.exports = `
 		newFacultad	(facultadNew : newFacultad): Facultad
 
 		newPrograma	(programaNew : newPrograma): Programa
+
+		newOrgano (organoNew : newOrgano): Organo
+
+		newStatusUser	(statusUserNew : newStatusUser): StatusUser
 	}
 `

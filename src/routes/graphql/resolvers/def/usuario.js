@@ -1,4 +1,4 @@
-const { Usuario, Mesa, Rol, TipoUsuario, StatusUser, Programa } = require('../../../../model');
+const { Usuario, Mesa, Rol, TipoUsuario, StatusUser, Programa, Lugar } = require('../../../../model');
 const { hashPassword } = require('../../../../utils');
 
 module.exports = {
@@ -234,7 +234,32 @@ module.exports = {
 								.then( dat => dat)
 								.catch( err => {throw new Error(err)})
 							}else{
-								return null;
+								return Usuario.findAll({
+									include:[
+										{
+											model: TipoUsuario,
+											required: true
+										},
+										{
+											model: Mesa,
+											required: true
+										},
+										{
+											model: StatusUser,
+											required: true
+										},
+										{
+											model: Rol,
+											required: true
+										},
+										{
+											model: Programa,
+											required: true
+										}
+									]
+								})
+								.then( dat => dat)
+								.catch( err => {throw new Error(err)})
 							}
 						}
 					}
@@ -244,7 +269,15 @@ module.exports = {
 	},
 	Usuario:{
 		mesa({mesa}){
-			return mesa.dataValues;
+			return Mesa.findById(mesa.dataValues.id,{
+				include:[
+					{
+						model: Lugar,
+						required: true
+					}
+				]
+			}).then( dat => dat)
+			.catch( err => {throw new Error(err)})
 		},
 		programa({programa}){
 			return programa.dataValues;
@@ -263,9 +296,9 @@ module.exports = {
 		newUsuario(root, {user}){
 			//La contraseña inicial es el dni, cifrada
 			return hashPassword(user.dni).then(pswEncrypted => {
-				//La cuenta es nombre-dni
-				user.cuenta = `${user.nombre}-${user.dni}`
-				user.contra = pswEncrypted
+
+				//La cuenta es dni
+				user.password = pswEncrypted;
 				return Usuario.find({
 					where:{
 						dni: user.dni

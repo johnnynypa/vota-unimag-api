@@ -20,5 +20,11 @@ module.exports = `
 
 		programa			(id:Int)				: Programa
 		programas			(facultadId: Int)		: [Programa]
+
+		organo			(id:Int)				: Organo
+		organos			(organoId: Int)		: [Organo]
+
+		statusUser			(id:Int)				: StatusUser
+		statusUsers			(statusUserId: Int)		: [StatusUser]
 	}
 `;

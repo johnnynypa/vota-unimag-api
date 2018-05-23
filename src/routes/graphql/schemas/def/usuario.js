@@ -7,8 +7,7 @@ module.exports = `
 		apellido: String!
 		apellido2: String!
 		dni: String!
-		correo: String!
-		nacimiento: String!
+		email: String!
 		telefono: String
 		sexo: String!
 		rol: Rol!
@@ -25,10 +24,9 @@ module.exports = `
 		apellido: String!
 		apellido2: String
 		dni: String!
-		correo: String!
-		nacimiento: String!
+		email: String!
 		telefono: String
-		sexo: Int
+		sexo: String!
 		rolId: Int!
 		tipoUsuarioId: Int!
 		statusUserId: Int!
