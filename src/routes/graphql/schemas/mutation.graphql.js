@@ -9,5 +9,7 @@ module.exports = `
 		newMesa			(mesaNew: newMesa)	: Mesa
 
 		newTipoUsuario	(tipoUsuarioNew : newTipoUsuario): TipoUsuario
+
+		newFacultad	(facultadNew : newFacultad): Facultad
 	}
 `

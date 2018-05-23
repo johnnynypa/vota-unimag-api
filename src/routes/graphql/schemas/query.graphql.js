@@ -14,5 +14,8 @@ module.exports = `
 
 		tipoUsuario			(id:Int)	: TipoUsuario
 		tipoUsuarios					: [TipoUsuario]
+
+		facultad			(id:Int)	: Facultad
+		facultades					: [Facultad]
 	}
 `;
