@@ -5,5 +5,9 @@ module.exports = `
 		newRol			(rolNew: newRol)	: Rol
 
 		newLugar			(lugarNew: newLugar)	: Lugar
+
+		newMesa			(mesaNew: newMesa)	: Mesa
+
+		newTipoUsuario	(tipoUsuarioNew : newTipoUsuario): TipoUsuario
 	}
 `

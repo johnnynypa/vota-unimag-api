@@ -8,5 +8,11 @@ module.exports = `
 
 		lugar				(id:Int!) 	: Lugar
 		lugares						: [Lugar]
+
+		mesa				(id:Int!) 	: Mesa
+		mesas						: [Mesa]
+
+		tipoUsuario			(id:Int)	: TipoUsuario
+		tipoUsuarios					: [TipoUsuario]
 	}
 `;
