@@ -1,12 +1,12 @@
 module.exports = `
-	type Organo{
+	type Mesa{
 		id: Int!
-        numero: String!
-        lugar: Lugar!
+		numero: String!
+		lugar: Lugar!
 	}
 
-	input newOrgano{
-        numero: String!
-        lugarId: Int!
+	input newMesa{
+		numero: String!
+		lugarId: Int!
 	}
 `

@@ -1,11 +1,11 @@
 module.exports = `
-	type Candidato{
+	type Voto{
 		id: Int!
 		candidato: Candidato!
 		mesa: Mesa!
 	}
 
-	input newCandidato{
+	input newVoto{
 		candidatoId: Int!
 		mesaId: Int!
 	}

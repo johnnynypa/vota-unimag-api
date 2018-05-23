@@ -278,7 +278,7 @@ module.exports = {
 							where:{
 								codigo: user.codigo
 							}
-						).then(dat => {
+						}).then(dat => {
 							if(!dat){
 								return Usuario.create(user)
 								.then( dat => dat)
