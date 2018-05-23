@@ -6,6 +6,7 @@ const Lugar = require('./def/lugar');
 const Mesa = require('./def/mesa');
 const TipoUsuario = require('./def/tipoUsuario');
 const Facultad = require('./def/facultad');
+const Programa = require('./def/programa');
 
 module.exports = merge(
 	Usuario,
@@ -13,5 +14,6 @@ module.exports = merge(
 	Lugar,
 	Mesa,
 	TipoUsuario,
-	Facultad
+	Facultad,
+	Programa
 );

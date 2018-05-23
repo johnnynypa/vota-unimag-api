@@ -10,12 +10,15 @@ module.exports = `
 		lugares						: [Lugar]
 
 		mesa				(id:Int!) 	: Mesa
-		mesas						: [Mesa]
+		mesas				(lugarId: Int)		: [Mesa]
 
 		tipoUsuario			(id:Int)	: TipoUsuario
 		tipoUsuarios					: [TipoUsuario]
 
 		facultad			(id:Int)	: Facultad
 		facultades					: [Facultad]
+
+		programa			(id:Int)				: Programa
+		programas			(facultadId: Int)		: [Programa]
 	}
 `;

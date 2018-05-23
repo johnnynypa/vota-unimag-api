@@ -11,5 +11,7 @@ module.exports = `
 		newTipoUsuario	(tipoUsuarioNew : newTipoUsuario): TipoUsuario
 
 		newFacultad	(facultadNew : newFacultad): Facultad
+
+		newPrograma	(programaNew : newPrograma): Programa
 	}
 `

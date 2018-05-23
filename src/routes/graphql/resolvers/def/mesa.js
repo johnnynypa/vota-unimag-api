@@ -12,15 +12,29 @@ module.exports = {
                 ]
             }).then(dat => dat).catch(err => {throw new Error("Esta mesa no existe")}) : null;
         },
-        mesas(){
-            return Mesa.findAll({
-                include:[
-                    {
-                        model: Lugar,
-                        required: true
-                    }
-                ]
-            }).then(dat => dat).catch(err => {throw new Error("Esta mesa no existe")});
+        mesas(root, {lugarId}){
+            if(lugarId){
+                return Mesa.findAll({
+                    where:{
+                        lugarId: lugarId
+                    },
+                    include:[
+                        {
+                            model: Lugar,
+                            required: true
+                        }
+                    ]
+                }).then(dat => dat).catch(err => {throw new Error("Esta mesa no existe")});    
+            }else{
+                return Mesa.findAll({
+                    include:[
+                        {
+                            model: Lugar,
+                            required: true
+                        }
+                    ]
+                }).then(dat => dat).catch(err => {throw new Error("Esta mesa no existe")});
+            }
         }
     },
     Mesa:{
