@@ -4,7 +4,7 @@ module.exports = `
 
 		newRol			(rolNew: newRol)	: Rol
 
-		newLugar			(lugarNew: newLugar)	: Lugar
+		newLugar		(lugarNew: newLugar)	: Lugar
 
 		newMesa			(mesaNew: newMesa)	: Mesa
 
@@ -17,5 +17,7 @@ module.exports = `
 		newOrgano (organoNew : newOrgano): Organo
 
 		newStatusUser	(statusUserNew : newStatusUser): StatusUser
+
+		newCandidato	(candidatoNew : newCandidato)	: Candidato
 	}
 `

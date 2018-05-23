@@ -25,6 +25,9 @@ module.exports = `
 		organos			(organoId: Int)		: [Organo]
 
 		statusUser			(id:Int)				: StatusUser
-		statusUsers			(statusUserId: Int)		: [StatusUser]
+		statusUsers									: [StatusUser]
+
+		candidato			(id:Int)				: Candidato
+		candidatos			(organoId: Int)		: [Candidato]
 	}
 `;

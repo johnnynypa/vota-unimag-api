@@ -9,6 +9,7 @@ const Facultad = require('./def/facultad');
 const Programa = require('./def/programa');
 const Organo = require('./def/organo');
 const StatusUser = require('./def/statusUser');
+const Candidato = require('./def/candidato');
 
 module.exports = merge(
 	Usuario,
@@ -19,5 +20,6 @@ module.exports = merge(
 	Facultad,
 	Programa,
 	StatusUser,
-	Organo
+	Organo,
+	Candidato
 );
