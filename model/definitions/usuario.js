@@ -77,7 +77,7 @@ module.exports = function(sequelize, dataType){
 					msg:"El telefono del usuario es necesario"
 				},
 			}
-		}
+		},
 		sexo: {
 			allowNull: false,
 			type: dataType.ENUM('Femenino', 'Masculino') 

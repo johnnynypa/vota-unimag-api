@@ -19,6 +19,8 @@ server.use(cors());
 server.use(bodyParser.json());
 server.use(express.static('public'));
 
+require('./model');
+
 //server.use('/login', login);
 
 
