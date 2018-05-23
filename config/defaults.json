@@ -1,0 +1,14 @@
+{
+	"port": 8000,
+	"db": {
+		"host": "localhost",
+		"auth": {
+			"user": "root",
+			"password": "sionDevelopers111"
+		},
+		"name": "elecciones",
+		"port": 3306,
+		"dialect": "mysql"
+	},
+	"jwtSecret": "lasuperpalabrasecretadelosjwt"
+}
