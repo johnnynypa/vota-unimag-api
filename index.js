@@ -25,17 +25,16 @@ require('./src/model');
 
 
 //API GRAPHQL
-// const graphql = require('./graphql')
-// const endPointGraphql = '/graphql'
+const graphql = require('./src/routes/graphql')
+const endPointGraphql = '/graphql'
 
-// server.use(endPointGraphql, (req,res, next) => {
-// 	// console.log(req);
-// 	next();
-// });
-// server.use(endPointGraphql, graphql);
+server.use(endPointGraphql, (req,res, next) => {
+	next();
+});
+server.use(endPointGraphql, graphql);
 
 if(dev){
-	// server.use('/graphiql', graphql);
+	server.use('/graphiql', graphql);
 }else{
 	server.use(express.static(path.join(__dirname, 'build')));
 
