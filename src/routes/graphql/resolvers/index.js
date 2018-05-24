@@ -10,6 +10,7 @@ const Programa = require('./def/programa');
 const Organo = require('./def/organo');
 const StatusUser = require('./def/statusUser');
 const Candidato = require('./def/candidato');
+const Voto = require('./def/voto');
 
 module.exports = merge(
 	Usuario,
@@ -21,5 +22,6 @@ module.exports = merge(
 	Programa,
 	StatusUser,
 	Organo,
-	Candidato
+	Candidato,
+	Voto
 );

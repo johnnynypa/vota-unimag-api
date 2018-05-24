@@ -29,5 +29,8 @@ module.exports = `
 
 		candidato			(id:Int)				: Candidato
 		candidatos			(organoId: Int)		: [Candidato]
+
+		voto			(id:Int)				: Voto
+		votos			(candidatoId: Int, mesaId: Int)		: [Voto]
 	}
 `;

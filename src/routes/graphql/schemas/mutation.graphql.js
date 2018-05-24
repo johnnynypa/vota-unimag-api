@@ -19,5 +19,7 @@ module.exports = `
 		newStatusUser	(statusUserNew : newStatusUser): StatusUser
 
 		newCandidato	(candidatoNew : newCandidato)	: Candidato
+
+		newVoto			(votoNew : newVoto)	: Voto
 	}
 `
