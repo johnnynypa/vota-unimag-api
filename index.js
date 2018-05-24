@@ -4,14 +4,14 @@ const bodyParser = require('body-parser');
 const config = require('dos-config');
 const cors = require('cors');
 const path = require('path');
-
+require('./src/model');
 
 // Config
 const port = parseInt(process.env.PORT, 10) || config.port;
 const dev = process.env.NODE_ENV !== 'production';
 
 //Others
-//const login = require('./routes/login');
+const login = require('./src/routes/login');
 const server = express();
 
 
@@ -19,9 +19,7 @@ server.use(cors());
 server.use(bodyParser.json());
 server.use(express.static('public'));
 
-require('./src/model');
-
-//server.use('/login', login);
+server.use('/login', login);
 
 
 //API GRAPHQL
@@ -46,4 +44,8 @@ if(dev){
 server.listen(port, (err) => {
 	if (err) throw err
 	console.log(`> Ready on http://localhost:${port}`)
-})
+});
+
+process.on('unhandledRejection', (reason) => {
+	console.log('REJECTION', reason)
+});
