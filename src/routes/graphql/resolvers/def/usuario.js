@@ -62,6 +62,7 @@ module.exports = {
 					})
 					.then( dat => dat)
 					.catch( err => {throw new Error(err)});
+				}else{
 					if(codigo){
 						return Usuario.find({
 							where:{
@@ -92,9 +93,9 @@ module.exports = {
 						})
 						.then( dat => dat)
 						.catch( err => {throw new Error(err)})
+					}else{
+						return null
 					}
-				}else{
-					return null
 				}
 			}
 		},
@@ -324,7 +325,16 @@ module.exports = {
 				})
 				.catch( err => {throw new Error(err)})
 			}).catch( err => {throw new Error(err)})
-
+		},
+		deleteUsuario(root, {id}){
+			return Usuario.destroy({
+				where:{
+					id: id
+				}
+			}).then( () => {
+				return true;
+			})
+			.catch( err => {throw new Error(err)});
 		}
 	}
 }

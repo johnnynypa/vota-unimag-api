@@ -1,7 +1,8 @@
 module.exports = `
 	type Mutation{
 		newUsuario		(user: newUsuario) : Usuario
-
+		deleteUsuario	(id: Int!)		:Boolean
+		
 		newRol			(rolNew: newRol)	: Rol
 
 		newLugar		(lugarNew: newLugar)	: Lugar
