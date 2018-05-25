@@ -335,6 +335,16 @@ module.exports = {
 				return true;
 			})
 			.catch( err => {throw new Error(err)});
+		},
+		autorizarUsuario(root, {id}){
+			return Usuario.update({
+				statusUserId: 2
+			},{
+				where:{
+					id: id
+				}
+			}).then( dat => true)
+			.catch( err => {throw new Error(err)});
 		}
 	}
 }
