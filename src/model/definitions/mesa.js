@@ -15,5 +15,10 @@ module.exports = function(sequelize, dataType){
 				},
 			}
 		},
+		habilitada:{
+			allowNull: false,
+			type: dataType.BOOLEAN,
+			defaultValue: false
+		}
 	})
 }

@@ -59,7 +59,7 @@ Candidato.belongsTo(Organo);
 Organo.hasMany(Candidato);
 
 
-// sequelize.sync({force: true})
+//sequelize.sync({force: true})
 sequelize.sync();
 
 exports.Usuario = Usuario;

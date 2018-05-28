@@ -3,6 +3,7 @@ module.exports = `
 		id: Int!
 		numero: String!
 		lugar: Lugar!
+		habilitada: Boolean!
 	}
 
 	input newMesa{

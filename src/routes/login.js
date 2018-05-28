@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const config = require('dos-config');
 const User = require('../model').Usuario;
+const Mesa = require('../model').Mesa;
 
 
 let router = express.Router();
@@ -33,13 +34,29 @@ router.post('/', (req, res) => {
             mesaId: data.mesaId
         },
             config.jwtSecret
-        );
-        return res.json(token);
+		);
+		
+		if(data.rolId === 1){
+			Mesa.findById(data.mesaId)
+			.then( dat => {
+				if(dat.habilitada === false){
+					return res.json({error: "Mesa No Habilitada"});
+				}else{
+					return res.json(token);		
+				}
+			})
+			.catch( err => {
+				console.error(err);
+        		return res.json({error: "Error en el Servidor, vuelva a intentarlo mas tarde"});
+			})
+		}else{
+			return res.json(token);
+		}
     })
     .catch(err => {
         //Error en el server.
         console.error(err);
-        return res.json({error: "Credenciales incorrectas"});
+        return res.json({error: "Error en el Servidor, vuelva a intentarlo mas tarde"});
 	});
 });
 
