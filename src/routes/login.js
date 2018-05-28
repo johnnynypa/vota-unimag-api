@@ -50,7 +50,24 @@ router.post('/', (req, res) => {
         		return res.json({error: "Error en el Servidor, vuelva a intentarlo mas tarde"});
 			})
 		}else{
-			return res.json(token);
+			if(data.rolId === 3){
+				Mesa.update({
+					habilitada: true
+				}, {
+					where:{
+						id: data.mesaId
+					}
+				}).then(dat => {
+					return res.json(token);
+				})
+				.catch( err => {
+					console.error(err);
+					return res.json({error: "Error en el Servidor, vuelva a intentarlo mas tarde"});
+				})
+			}else{
+				return res.json(token);
+			}
+			
 		}
     })
     .catch(err => {
