@@ -345,6 +345,16 @@ module.exports = {
 				}
 			}).then( dat => true)
 			.catch( err => {throw new Error(err)});
+		},
+		usuarioVotado(root, {id}){
+			return Usuario.update({
+				statusUserId: 3
+			},{
+				where:{
+					id: id
+				}
+			}).then( dat => true)
+			.catch( err => {throw new Error(err)});
 		}
 	}
 }
