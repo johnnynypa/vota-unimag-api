@@ -42,10 +42,14 @@ router.post('/', (req, res) => {
 				if(dat.habilitada === false){
 					return res.json({error: "Mesa No Habilitada"});
 				}else{
-					if(dat.statusUserId === 3){
+					if(data.statusUserId === 3){
 						return res.json({error: "Usted ya votó"});
 					}else{
-						return res.json(token);
+						if(data.statusUserId === 1){
+							return res.json({error: "Usted no esta autorizado para votar"});
+						}else{
+							return res.json(token);
+						}
 					}
 					
 				}
