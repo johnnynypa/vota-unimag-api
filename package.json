@@ -24,6 +24,6 @@
     "graphql-tools": "^3.0.2",
     "jsonwebtoken": "^8.2.1",
     "mysql2": "^1.5.3",
-    "sequelize": "^4.37.8"
+    "sequelize": "^5.15.1"
   }
 }
